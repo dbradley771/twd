@@ -147,34 +147,8 @@
 		</div>
 	</div>
 	<script>
-		csv = "Overall,Season,Episode Number,Name,1,1,1,Days Gone Bye,2,1,2,Guts,3,1,3,Tell It to the Frogs,4,1,4,Vatos,5,1,5,Wildfire,6,1,6,TS-19,7,2,1,What Lies Ahead,8,2,2,Bloodletting,9,2,3,Save the Last One,10,2,4,Cherokee Rose,11,2,5,Chupacabra,12,2,6,Secrets,13,2,7,Pretty Much Dead Already,14,2,8,Nebraska,15,2,9,Triggerfinger,16,2,10,18 Miles Out,17,2,11,\"Judge, Jury, Executioner\",18,2,12,Better Angels,19,2,13,Beside the Dying Fire,20,3,1,Seed,21,3,2,Sick,22,3,3,Walk with Me,23,3,4,Killer Within,24,3,5,Say the Word,25,3,6,Hounded,26,3,7,When the Dead Come Knocking,27,3,8,Made to Suffer,28,3,9,The Suicide King,29,3,10,Home,30,3,11,I Ain't a Judas,31,3,12,Clear,32,3,13,Arrow on the Doorpost,33,3,14,Prey,34,3,15,This Sorrowful Life,35,3,16,Welcome to the Tombs,36,4,1,30 Days Without an Accident,37,4,2,Infected,38,4,3,Isolation,39,4,4,Indifference,40,4,5,Internment,41,4,6,Live Bait,42,4,7,Dead Weight,43,4,8,Too Far Gone,44,4,9,After,45,4,10,Inmates,46,4,11,Claimed,47,4,12,Still,48,4,13,Alone,49,4,14,The Grove,50,4,15,Us,51,4,16,A,52,5,1,No Sanctuary,53,5,2,Strangers,54,5,3,Four Walls and a Roof,55,5,4,Slabtown,56,5,5,Self Help,57,5,6,Consumed,58,5,7,Crossed,59,5,8,Coda,60,5,9, What Happened and What's Going On,61,5,10,Them,62,5,11,The Distance,63,5,12,Remember,64,5,13,Forget,65,5,14,Spend,66,5,15,Try,67,5,16,Conquer,68,6,1,First Time Again,69,6,2,JSS,70,6,3,Thank You,71,6,4,Here's Not Here,72,6,5,Now,73,6,6,Always Accountable,74,6,7,Heads Up,75,6,8,Start to Finish,76,6,9,No Way Out,77,6,10,The Next World,78,6,11,Knots Untie,79,6,12,Not Tomorrow Yet,80,6,13,The Same Boat,81,6,14,Twice as Far,82,6,15,East,83,6,16,,";
 		episodesWatched = 15;
 		totalEpisodesReleased = 80;
-		
-		$(document).ready(function() {
-			lines = processData(csv);
-			document.getElementById('episodeToWatch').innerHTML = "S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"";
-			document.getElementById('episodesWatched').innerHTML = episodesWatched;
-			document.getElementById('episodesToWatch').innerHTML = totalEpisodesReleased - episodesWatched;
-		});
-
-		function processData(allText) {
-			var record_num = 4;  // or however many elements there are in each row
-			var allTextLines = allText.split(/\r\n|\n/);
-			var entries = allTextLines[0].split(',');
-			var lines = [];
-
-			var headings = entries.splice(0,record_num);
-			while (entries.length>0) {
-				var tarr = [];
-				for (var j=0; j<record_num; j++) {
-					tarr.push(entries.shift());
-				}
-				lines.push(tarr);
-			}
-			
-			return(lines);
-		}
 		
 		$(document).ready(function() {
 			$.ajax({
