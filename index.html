@@ -130,6 +130,7 @@
 				dataType: "text",
 				success: function(csv) {
 					data = processData(csv);
+					alert(data);
 				}
 			 });
 		});
@@ -151,7 +152,6 @@
 				}
 			}
 			return(lines);
-			console.log(lines);
 		}
 	</script>
 </head>
