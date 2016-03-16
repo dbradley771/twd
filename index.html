@@ -122,8 +122,6 @@
 	<script>
 		var episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
 		var totalEpisodesReleased = 80;
-		var data;
-		console.log(0);
 		
 		$(document).ready(function() {
 			$.ajax({
@@ -132,7 +130,7 @@
 				dataType: "text",
 				success: function(csv) {
 					data = $.csv.toArrays(csv);
-					document.getElementById('episodeToWatch').innerHTML = "S" + data[episodesWatched][1] + " E" + data[episodesWatched][2] + " \"" + data[episodesWatched][3] + "\"";
+					document.getElementById('episodeToWatch').innerHTML = "S" + data[episodesWatched+1][1] + " E" + data[episodesWatched+1][2] + " \"" + data[episodesWatched+1][3] + "\"";
 				}
 			 });
 		 });
