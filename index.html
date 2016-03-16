@@ -128,8 +128,8 @@
 				type: "GET",
 				url: "twd.csv",
 				dataType: "text",
-				success: function(data) {
-					data = processData(data);
+				success: function(csv) {
+					data = processData(csv);
 				}
 			 });
 		});
