@@ -149,7 +149,7 @@
 			dataType: "text",
 			success: function(csv) {
 				data = processData(csv);
-				console.log(1);
+				document.getElementById('episodeToWatch').innerHTML = "S" + data[episodesWatched][1] + " E" + data[episodesWatched][2] + " \"" + data[episodesWatched][3] + "\"";
 			}
 		 });
 	</script>
@@ -164,10 +164,7 @@
 		<div id="current">
 			<h1>Current Episode to Watch</h1>
 			<h2 id="episodeToWatch">
-				<script>
-					console.log(2);
-					document.write("S" + data[episodesWatched][1] + " E" + data[episodesWatched][2] + " \"" + data[episodesWatched][3] + "\"");
-				</script>
+				?
 			</h2>
 		</div>
 		<hr/>
@@ -179,12 +176,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td id="episodesWatched">
+						<td>
 							<script>
 								document.write(episodesWatched);
 							</script>
 						</td>
-						<td id="episodesToWatch">
+						<td>
 							<script>
 								document.write(totalEpisodesReleased - episodesWatched);
 							</script>
