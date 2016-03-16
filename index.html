@@ -122,18 +122,6 @@
 		var episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
 		var totalEpisodesReleased = 80;
 		var data;
-		
-		$(document).ready(function() {
-			$.ajax({
-				type: "GET",
-				url: "twd.csv",
-				dataType: "text",
-				success: function(csv) {
-					data = processData(csv);
-					alert(data);
-				}
-			 });
-		});
 
 		function processData(allText) {
 			var allTextLines = allText.split(/\r\n|\n/);
@@ -153,6 +141,16 @@
 			}
 			return(lines);
 		}
+		
+		$.ajax({
+			type: "GET",
+			url: "twd.csv",
+			dataType: "text",
+			success: function(csv) {
+				data = processData(csv);
+				alert(data);
+			}
+		 });
 	</script>
 </head>
 <body>
