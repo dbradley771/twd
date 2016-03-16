@@ -155,11 +155,13 @@
 				type: "GET",
 				url: "twd.csv",
 				dataType: "text",
-				success: function(data) {lines = processData(data);}
+				success: function(data) {
+					lines = processData(data);
+					document.getElementById('episodeToWatch').innerHTML = "S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"";
+					document.getElementById('episodesWatched').innerHTML = episodesWatched;
+					document.getElementById('episodesToWatch').innerHTML = totalEpisodesReleased - episodesWatched;
+				}
 			 });
-			document.getElementById('episodeToWatch').innerHTML = "S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"";
-			document.getElementById('episodesWatched').innerHTML = episodesWatched;
-			document.getElementById('episodesToWatch').innerHTML = totalEpisodesReleased - episodesWatched;
 		});
 
 		function processData(allText) {
