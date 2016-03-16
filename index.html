@@ -121,6 +121,7 @@
 	<script>
 		episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
 		totalEpisodesReleased = 80;
+		lines;
 		
 		$(document).ready(function() {
 			$.ajax({
@@ -178,8 +179,16 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td id="episodesWatched">document.write(episodesWatched)</td>
-						<td id="episodesToWatch">document.write(totalEpisodesReleased - episodesWatched)</td>
+						<td id="episodesWatched">
+							<script>
+								document.write(episodesWatched);
+							</script>
+						</td>
+						<td id="episodesToWatch">
+							<script>
+								document.write(totalEpisodesReleased - episodesWatched);
+							</script>
+						</td>
 					</tr>
 				</tbody>
 			</table>
