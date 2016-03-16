@@ -122,6 +122,7 @@
 		var episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
 		var totalEpisodesReleased = 80;
 		var data;
+		console.log(0);
 
 		function processData(allText) {
 			var allTextLines = allText.split(/\r\n|\n/);
@@ -148,6 +149,7 @@
 			dataType: "text",
 			success: function(csv) {
 				data = processData(csv);
+				console.log(1);
 			}
 		 });
 	</script>
@@ -163,6 +165,7 @@
 			<h1>Current Episode to Watch</h1>
 			<h2 id="episodeToWatch">
 				<script>
+					console.log(2);
 					document.write("S" + data[episodesWatched][1] + " E" + data[episodesWatched][2] + " \"" + data[episodesWatched][3] + "\"");
 				</script>
 			</h2>
