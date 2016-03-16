@@ -118,34 +118,6 @@
 		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-</head>
-<body>
-	<div id="wrapper">
-		<div id="header">
-			<div style="text-align: left; font-size: 90%; line-height: 100%;">HOW FAR BEHIND IS DAVID IN</div>
-			<div style="text-align: right; font-weight: 700; font-size: 200%; line-height: 100%;">THE WALKING DEAD?</div>
-		</div>
-		<hr/>
-		<div id="current">
-			<h1>Current Episode to Watch</h1>
-			<h2 id="episodeToWatch">?</h2>
-		</div>
-		<hr/>
-		<div id="numbers">
-			<table>
-				<thead>
-					<td>Episodes Watched</td>
-					<td>Episodes to&nbsp;Watch</td>
-				</thead>
-				<tbody>
-					<tr>
-						<td id="episodesWatched">?</td>
-						<td id="episodesToWatch">?</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
 	<script>
 		episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
 		totalEpisodesReleased = 80;
@@ -157,9 +129,6 @@
 				dataType: "text",
 				success: function(data) {
 					lines = processData(data);
-					document.getElementById('episodeToWatch').innerHTML = "S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"";
-					document.getElementById('episodesWatched').innerHTML = episodesWatched;
-					document.getElementById('episodesToWatch').innerHTML = totalEpisodesReleased - episodesWatched;
 				}
 			 });
 		});
@@ -184,13 +153,37 @@
 			console.log(lines);
 		}
 	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div style="text-align: left; font-size: 90%; line-height: 100%;">HOW FAR BEHIND IS DAVID IN</div>
+			<div style="text-align: right; font-weight: 700; font-size: 200%; line-height: 100%;">THE WALKING DEAD?</div>
+		</div>
+		<hr/>
+		<div id="current">
+			<h1>Current Episode to Watch</h1>
+			<h2 id="episodeToWatch">
+				<script>
+					document.write("S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"");
+				</script>
+			</h2>
+		</div>
+		<hr/>
+		<div id="numbers">
+			<table>
+				<thead>
+					<td>Episodes Watched</td>
+					<td>Episodes to&nbsp;Watch</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="episodesWatched">document.write(episodesWatched)</td>
+						<td id="episodesToWatch">document.write(totalEpisodesReleased - episodesWatched)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>
-<!--
-Last update:
-3/12/2016
-
-Last new episode at time of last update
-S6E13 "The Same Boat" - Overall 80
-
--->
