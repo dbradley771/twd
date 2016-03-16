@@ -119,9 +119,9 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script>
-		episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
-		totalEpisodesReleased = 80;
-		lines;
+		var episodesWatched = 16; // <--------------------------- HERE! THIS ONE!
+		var totalEpisodesReleased = 80;
+		var data;
 		
 		$(document).ready(function() {
 			$.ajax({
@@ -129,7 +129,7 @@
 				url: "twd.csv",
 				dataType: "text",
 				success: function(data) {
-					lines = processData(data);
+					data = processData(data);
 				}
 			 });
 		});
@@ -166,7 +166,7 @@
 			<h1>Current Episode to Watch</h1>
 			<h2 id="episodeToWatch">
 				<script>
-					document.write("S" + lines[episodesWatched][1] + " E" + lines[episodesWatched][2] + " \"" + lines[episodesWatched][3] + "\"");
+					document.write("S" + data[episodesWatched][1] + " E" + data[episodesWatched][2] + " \"" + data[episodesWatched][3] + "\"");
 				</script>
 			</h2>
 		</div>
