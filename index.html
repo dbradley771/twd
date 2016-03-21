@@ -55,10 +55,8 @@
 		
 		
 		#header {
-			text-align: left;
 			margin-top: 2em;
 			font-size: 3em;
-			font-family: 'Teko', sans-serif;
 			font-weight: 400; 
 		}
 
@@ -77,49 +75,30 @@
 			padding: 0;
 		}
 		
-		h1 {
-			font-weight: 300;
-			font-size: 2.5em;
-			line-height: 150%;
-			margin: 0;
-			-webkit-margin-before: 0;
-			-webkit-margin-after: 0;
-			-webkit-margin-start: 0;
-			-webkit-margin-end: 0;
-		}
-		
-		h2 {
-			font-weight: 300;
-			font-size: 4.5em;
-			line-height: 100%;
-			margin: 0;
-			-webkit-margin-before: 0;
-			-webkit-margin-after: 0;
-			-webkit-margin-start: 0;
-			-webkit-margin-end: 0;
-		}
-		
-		#numbers table {
+		.stacked {
 			margin: auto;
 			border-collapse: separate;
 			border-spacing: 1em 0;
 		}
 		
-		#numbers thead {
+		.stacked thead {
 			font-weight: 300;
 			font-size: 2.5em;
-			line-height: 150%;
 		}
 		
-		#numbers tbody {
+		.stacked tbody {
 			font-weight: 300;
 			font-size: 4.5em;
-			line-height: 100%;
 		}
 		
-		#stats table {
+		.stacked td {
+			vertical-align: text-top;
+		}
+		
+		#stats {
 			margin: auto;
 			border-collapse: separate;
+			border-spacing: 0;
 			width: 100%;
 		}
 		
@@ -139,7 +118,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="jquery-csv.js"></script>
 	<script>
-		var episodesWatched = 44; // <--------------------------- HERE! THIS ONE!
+		var episodesWatched = 45; // <--------------------------- HERE! THIS ONE!
 		var totalEpisodesReleased = 81;
 		
 		$(document).ready(function() {
@@ -170,15 +149,23 @@
 			<div style="text-align: right; font-weight: 700; font-size: 200%; line-height: 100%;">THE WALKING DEAD?</div>
 		</div>
 		<hr/>
-		<div id="current">
-			<h1>Current Episode to Watch</h1>
-			<h2 id="episodeToWatch">
-				?
-			</h2>
+		<div>
+			<table class="stacked">
+				<thead>
+					<td>Current Episode to Watch</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="episodeToWatch">
+							?
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<hr/>
-		<div id="numbers">
-			<table>
+		<div>
+			<table class="stacked">
 				<thead>
 					<td>Episodes Watched</td>
 					<td>Episodes to&nbsp;Watch</td>
@@ -200,27 +187,21 @@
 			</table>
 		</div>
 		<hr/>
-		<div id="stats">
-			<table>
+		<div>
+			<table id="stats">
 				<tbody>
 					<tr>
 						<td>
 							Current season progress&nbsp;&nbsp;&nbsp;&nbsp;
 						</td>
-						<td>
-							<span id="seasonProg">
-								?
-							</span>
+						<td id="seasonProg">
 						</td>
 					</tr>
 					<tr>
 						<td>
 							Overall progress
 						</td>
-						<td>
-							<span id="overallProg">
-								?
-							</span>
+						<td id="overallProg">
 						</td>
 					</tr>
 					<tr>
