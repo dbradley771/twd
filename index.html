@@ -143,7 +143,7 @@
 							temp++;
 						}
 					}
-					document.getElementById('seasonProg').innerHTML = (data[episodesWatched+1][2] + "/" + temp) + " " + ("(" + ((data[episodesWatched+1][2]/temp) * 100).toFixed(2) + "%)");
+					document.getElementById('seasonProg').innerHTML = (data[episodesWatched][2] + "/" + temp) + " " + ("(" + ((data[episodesWatched][2]/temp) * 100).toFixed(2) + "%)");
 					document.getElementById('overallProg').innerHTML = (episodesWatched + "/" + totalEpisodesReleased) + " " + ("(" + ((episodesWatched/totalEpisodesReleased) * 100).toFixed(2) + "%)");
 				}
 			 });
