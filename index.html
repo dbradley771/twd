@@ -164,15 +164,15 @@
                     
                     if (episodesWatched < totalEpisodesReleased) {
                         document.getElementById('episodeToWatch').innerHTML = "S" + data[episodesWatched+1][1] + " E" + data[episodesWatched+1][2] + " \"" + data[episodesWatched+1][3] + "\"";
-                        document.getElementById('seasonProg').innerHTML = (data[episodesWatched][2] + "/" + totalEpisodesInSeason) + " " + ("(" + ((data[episodesWatched][2]/totalEpisodesInSeason) * 100).toFixed(2) + "%)");
+                        document.getElementById('seasonProg').innerHTML = (data[episodesWatched][2] + "/" + totalEpisodesInSeason) + " " + ("(" + ((data[episodesWatched][2]/totalEpisodesInSeason) * 100).toFixed(0) + "%)");
                         document.getElementById('seasonProgBar').style.width = ((data[episodesWatched][2]/totalEpisodesInSeason) * 100) + "%";
-                        document.getElementById('overallProg').innerHTML = (episodesWatched + "/" + totalEpisodesReleased) + " " + ("(" + ((episodesWatched/totalEpisodesReleased) * 100).toFixed(2) + "%)");
+                        document.getElementById('overallProg').innerHTML = (episodesWatched + "/" + totalEpisodesReleased) + " " + ("(" + ((episodesWatched/totalEpisodesReleased) * 100).toFixed(0) + "%)");
                         document.getElementById('overallProgBar').style.width = ((episodesWatched/totalEpisodesReleased) * 100) + "%";
                     } else if (episodesWatched >= totalEpisodesReleased) {
                         document.getElementById('episodeToWatch').innerHTML = "Unkown";
-                        document.getElementById('seasonProg').innerHTML = (data[totalEpisodesReleased][2] + "/" + totalEpisodesInSeason) + " " + ("(" + ((data[totalEpisodesReleased][2]/totalEpisodesInSeason) * 100).toFixed(2) + "%)");
+                        document.getElementById('seasonProg').innerHTML = (data[totalEpisodesReleased][2] + "/" + totalEpisodesInSeason) + " " + ("(" + ((data[totalEpisodesReleased][2]/totalEpisodesInSeason) * 100).toFixed(0) + "%)");
                         document.getElementById('seasonProgBar').style.width = ((data[totalEpisodesReleased][2]/totalEpisodesInSeason) * 100) + "%";
-                        document.getElementById('overallProg').innerHTML = (totalEpisodesReleased + "/" + totalEpisodesReleased) + " " + ("(" + ((totalEpisodesReleased/totalEpisodesReleased) * 100).toFixed(2) + "%)");
+                        document.getElementById('overallProg').innerHTML = (totalEpisodesReleased + "/" + totalEpisodesReleased) + " " + ("(" + ((totalEpisodesReleased/totalEpisodesReleased) * 100).toFixed(0) + "%)");
                         document.getElementById('overallProgBar').style.width = ((totalEpisodesReleased/totalEpisodesReleased) * 100) + "%";
                     }
                 }
