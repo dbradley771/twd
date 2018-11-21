@@ -171,7 +171,7 @@
                         document.getElementById('seasonProg').innerHTML = "0/0 (0.0%)";
                         document.getElementById('overallProg').innerHTML = (episodeOverall + "/" + totalEpisodesOverall) + " " + ("(" + ((episodeOverall/totalEpisodesOverall) * 100).toFixed(1) + "%)");
                     } else if (episodeOverall >= totalEpisodesOverall) {
-                        document.getElementById('episodeToWatch').innerHTML = "Unkown";
+                        document.getElementById('episodeToWatch').innerHTML = "I'm not watching this anymore";
                         document.getElementById('seasonProg').innerHTML = (data[totalEpisodesOverall][2] + "/" + totalEpisodesInSeason) + " " + ("(" + ((data[totalEpisodesOverall][2]/totalEpisodesInSeason) * 100).toFixed(1) + "%)");
                         document.getElementById('seasonProgBar').style.width = ((data[totalEpisodesOverall][2]/totalEpisodesInSeason) * 100) + "%";
                         document.getElementById('overallProg').innerHTML = (totalEpisodesOverall + "/" + totalEpisodesOverall) + " " + ("(" + ((totalEpisodesOverall/totalEpisodesOverall) * 100).toFixed(1) + "%)");
